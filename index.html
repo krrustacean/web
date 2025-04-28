@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rendezvous - Enhanced Portfolio</title>
+  <title>Rendezvous</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* Import Google Font */
@@ -923,6 +923,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
+      margin-top: 40px;
     }
 
     .project-content h3 {
@@ -991,6 +992,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
+      margin-top: 40px;
     }
 
     .service-card {
@@ -1042,184 +1044,380 @@
          margin-top: auto; /* Push button to bottom */
      }
 
-    /* --- Contact Section --- */
-     #contact > .container > p { /* Target intro paragraph */
-         margin-bottom: 40px;
-         color: var(--text-muted);
-         font-size: 1.1rem;
-         max-width: 800px;
-     }
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap; /* Allow wrapping */
-      gap: 50px;
-    }
+    /* --- Contact Section - Enhanced UI/UX --- */
+#contact {
+  padding: 1px 0;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
 
-    .contact-info {
-      flex: 1;
-      min-width: 280px; /* Ensure minimum width */
-    }
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
 
-    .contact-info > p { /* Target first paragraph */
-      margin-bottom: 35px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+#contact-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text);
+}
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 30px;
-      transition: transform 0.3s ease; /* Add hover effect to item */
-    }
-     .contact-item:hover {
-         transform: translateX(5px);
-     }
+.header-underline {
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
 
-    .contact-icon {
-      width: 55px; /* Slightly larger */
-      height: 55px;
-      flex-shrink: 0;
-      background-color: rgba(255, 200, 87, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 1.5rem; /* Larger icon */
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    }
-     .contact-item:hover .contact-icon {
-         background-color: var(--primary);
-         color: var(--dark);
-         transform: scale(1.1) rotate(10deg); /* Animate icon */
-     }
+.section-intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
-    .contact-text h4 {
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-      font-weight: 600;
-      color: var(--text);
-    }
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
 
-    .contact-text p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-     .contact-text a { /* Make email/phone clickable */
-         color: var(--text-muted);
-         text-decoration: none;
-         transition: color 0.3s ease;
-     }
-     .contact-text a:hover {
-         color: var(--primary);
-         text-decoration: underline;
-     }
+/* Contact Info Card */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
 
-    /* Contact Form */
-    .contact-form {
-      flex: 1.3; /* Slightly more space */
-      min-width: 300px; /* Ensure minimum width */
-      background-color: var(--card-bg);
-      padding: 40px; /* Increased padding */
-      border-radius: 10px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border-color);
-    }
+.info-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
 
-    .input-group {
-      margin-bottom: 25px;
-      position: relative; /* For potential icon placement */
-    }
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 60px;
+  background: var(--primary);
+  border-radius: 0 0 4px 0;
+}
 
-    .input-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
+.info-intro {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 35px;
+  font-size: 0.95rem;
+}
 
-    .input-group input,
-    .input-group textarea {
-      width: 100%;
-      padding: 14px 18px; /* Adjust padding */
-      background-color: rgba(255, 255, 255, 0.03); /* Darker input background */
-      border: 1px solid var(--border-color);
-      border-radius: 6px; /* Match other radii */
-      color: var(--text);
-      transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-      font-size: 1rem;
-      line-height: 1.5;
-      font-family: inherit; /* Ensure font consistency */
-    }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  padding: 12px 15px;
+  border-radius: 10px;
+}
 
-    .input-group input:focus,
-    .input-group textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      background-color: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 10px rgba(255, 200, 87, 0.1); /* Subtle glow on focus */
-    }
-     .input-group input:hover,
-     .input-group textarea:hover {
-         border-color: rgba(255, 200, 87, 0.5);
-     }
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  transform: translateX(5px);
+}
 
-    .input-group textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: rgba(255, 200, 87, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
 
-    .submit-btn {
-      background-color: var(--primary);
-      color: var(--dark);
-      border: none;
-      padding: 14px 35px; /* More padding */
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: inline-flex; /* Match .btn */
-      align-items: center;
-      gap: 8px;
-      border: 2px solid var(--primary);
-      /* Use the same hover effect as .btn */
-    }
-     .submit-btn::before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 0;
-         height: 100%;
-         background-color: var(--dark);
-         transition: width 0.3s ease;
-         z-index: -1;
-         border-radius: 30px;
-     }
-     .submit-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 18px rgba(255, 200, 87, 0.25);
-        color: var(--primary);
-     }
-     .submit-btn:hover::before {
-         width: 100%;
-     }
+.contact-item:hover .contact-icon {
+  background: var(--primary);
+  color: var(--dark);
+  transform: rotate(10deg);
+  box-shadow: 0 8px 20px rgba(255, 200, 87, 0.25);
+}
 
-     /* Form Status Message */
-     #form-status {
-         margin-top: 20px;
-         font-size: 0.9rem;
-         min-height: 1.5em; /* Reserve space */
-         transition: color 0.3s ease;
-     }
-     #form-status.success { color: #4ade80; } /* Green */
-     #form-status.error { color: #f87171; } /* Red */
-     #form-status.sending { color: var(--text-muted); }
+.contact-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.contact-text p, .contact-text a {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-text a:hover {
+  color: var(--primary);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--primary);
+  color: var(--dark);
+  transform: translateY(-5px);
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1.2;
+  min-width: 320px;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.input-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  margin-bottom: 25px;
+  flex: 1;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.textarea-icon {
+  top: 20px;
+  transform: none;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  width: 100%;
+  padding: 14px 18px 14px 45px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: var(--text);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 15px rgba(255, 200, 87, 0.1);
+}
+
+.input-wrapper input:hover,
+.input-wrapper textarea:hover {
+  border-color: rgba(255, 200, 87, 0.3);
+}
+
+.input-wrapper input:focus + .input-icon,
+.input-wrapper textarea:focus + .input-icon,
+.input-wrapper input:not(:placeholder-shown) + .input-icon,
+.input-wrapper textarea:not(:placeholder-shown) + .input-icon {
+  color: var(--primary);
+}
+
+.input-wrapper textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-btn {
+  background: var(--primary);
+  color: var(--dark);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 200, 87, 0.25);
+}
+
+.submit-btn:hover::before {
+  width: 100%;
+}
+
+.submit-btn i {
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover i {
+  transform: translateX(5px);
+}
+
+#form-status {
+  margin-left: 15px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+#form-status.success {
+  color: #4ade80;
+}
+
+#form-status.error {
+  color: #f87171;
+}
+
+#form-status.sending {
+  color: var(--text-muted);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  #contact::before {
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 50%);
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact {
+    padding: 70px 0;
+  }
+  
+  .form-container, .info-card {
+    padding: 30px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
 
     /* --- Footer --- */
     footer {
@@ -1538,7 +1736,7 @@
   </button>
   <div>
     <div class="profile">
-      <img src="https://i.pinimg.com/736x/e3/52/c5/e352c5ff6c36b373c8a78a08e739b51d.jpg" alt="Rendezvous stylized R logo">
+      <img src="images/ren.jpg" alt="Rendezvous stylized R logo">
       <h2>Rendezvous</h2>
       <p>Creative Web & Security</p> </div>
 
@@ -1575,7 +1773,7 @@
 
 <header class="desktop-header" id="header" role="banner">
   <a href="#home" class="logo-container" onclick="showSection('home'); return false;" title="Go to Home" tabindex="0">
-    <img src="https://i.pinimg.com/736x/e3/52/c5/e352c5ff6c36b373c8a78a08e739b51d.jpg" alt="Rendezvous stylized R logo">
+    <img src="images/ren.jpg" alt="Rendezvous stylized R logo">
     <h2>Rendezvous</h2>
   </a>
 
@@ -1631,7 +1829,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="https://i.pinimg.com/736x/e3/52/c5/e352c5ff6c36b373c8a78a08e739b51d.jpg" alt="Rendezvous stylized R logo">
+        <img src="images/ren.jpg" alt="Rendezvous stylized R logo">
       </div>
     </div>
   </section>
@@ -1907,109 +2105,137 @@
     </div>
   </section>
 
-  <section id="contact" class="section container" role="region" aria-labelledby="contact-heading">
-    <h1 id="contact-heading">Let's Connect</h1>
-    <p>Interested in collaborating, have a question, or just want to chat about tech? Reach out!</p>
-
-    <div class="contact-container">
-      <div class="contact-info">
-        <p>I'm currently available for freelance projects and always open to discussing new ideas. Use the form or the details below.</p>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-text">
-            <h4>Email</h4>
-            <p><a href="mailto:hello@rendezvous.dev" title="Send an email">hello@rendezvous.dev</a></p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <div class="contact-text">
-            <h4>Phone</h4>
-             <p><a href="tel:+639123456789" title="Call me">+63 912 345 6789</a></p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="contact-text">
-            <h4>Location</h4>
-            <p>Cagayan de Oro, Philippines</p>
-          </div>
-        </div>
+  <section id="contact" class="section" role="region" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="contact-heading">Let's Connect</h2>
+        <div class="header-underline"></div>
+        <p class="section-intro">Interested in collaborating, have a question, or just want to chat about tech? I'm just a message away!</p>
       </div>
-
-      <div class="contact-form">
-         <form action="#" method="POST" id="contactForm" novalidate>
-          <div class="input-group">
-             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="e.g., Juan Dela Cruz" required minlength="2">
+  
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="info-card">
+            <p class="info-intro">I'm currently available for freelance projects and always open to discussing new ideas. Reach out using the form or contact me directly through these channels:</p>
+  
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <p><a href="mailto:hello@rendezvous.dev" title="Send an email">hello@rendezvous.dev</a></p>
+              </div>
+            </div>
+  
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Phone</h4>
+                <p><a href="tel:+639123456789" title="Call me">+63 912 345 6789</a></p>
+              </div>
+            </div>
+  
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Location</h4>
+                <p>Cagayan de Oro, Philippines</p>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
-
-          <div class="input-group">
-             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="e.g., juan.dela.cruz@email.com" required>
+        </div>
+  
+        <div class="contact-form">
+          <div class="form-container">
+            <h3 class="form-title">Send me a message</h3>
+            
+            <form action="#" method="POST" id="contactForm" novalidate>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="name">Your Name</label>
+                  <div class="input-wrapper">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" required minlength="2">
+                  </div>
+                </div>
+  
+                <div class="input-group">
+                  <label for="email">Your Email</label>
+                  <div class="input-wrapper">
+                    <i class="fas fa-at input-icon"></i>
+                    <input type="email" id="email" name="email" placeholder="juan.d.cruz@email.com" required>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="input-group">
+                <label for="subject">Subject</label>
+                <div class="input-wrapper">
+                  <i class="fas fa-heading input-icon"></i>
+                  <input type="text" id="subject" name="subject" placeholder="Project Inquiry">
+                </div>
+              </div>
+  
+              <div class="input-group">
+                <label for="message">Your Message</label>
+                <div class="input-wrapper">
+                  <i class="fas fa-comment-alt input-icon textarea-icon"></i>
+                  <textarea id="message" name="message" placeholder="Tell me about your project or question..." required minlength="10" rows="5"></textarea>
+                </div>
+              </div>
+  
+              <div class="form-footer">
+                <button type="submit" class="submit-btn">
+                  <span>Send Message</span>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+                <div id="form-status" aria-live="polite"></div>
+              </div>
+            </form>
           </div>
-
-          <div class="input-group">
-             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="e.g., Project Inquiry">
-          </div>
-
-          <div class="input-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell me about your project or question..." required minlength="10"></textarea>
-          </div>
-
-           <button type="submit" class="submit-btn">
-               <i class="fa-solid fa-paper-plane"></i> Send Message
-            </button>
-          <p id="form-status" aria-live="polite"></p>
-        </form>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer role="contentinfo">
+<footer>
   <div class="footer-content">
     <div class="footer-logo">
-       <img src="https://i.pinimg.com/736x/e3/52/c5/e352c5ff6c36b373c8a78a08e739b51d.jpg" alt="Rendezvous stylized R logo">
+      <img src="https://i.pinimg.com/736x/e3/52/c5/e352c5ff6c36b373c8a78a08e739b51d.jpg" alt="Logo">
     </div>
-
-    <nav class="mobile-nav">
-        <a id="home-mobile" href="#home" onclick="showSection('home'); closeSidebar();"><i class="fa-solid fa-house-chimney"></i> Home</a>
-        <a id="about-mobile" href="#about" onclick="showSection('about'); closeSidebar();"><i class="fa-solid fa-address-card"></i> About</a>
-        <a id="hobbies-mobile" href="#hobbies" onclick="showSection('hobbies'); closeSidebar();"><i class="fa-solid fa-gamepad"></i> Hobbies</a>
-      
-        <button class="dropdown-btn" id="works-dropdown-mobile" aria-controls="works-container-mobile" aria-expanded="false">
-          <i class="fa-solid fa-briefcase"></i> Works <span class="chevron" aria-hidden="true">▼</span>
-        </button>
-        <div class="dropdown-container" id="works-container-mobile" role="region" aria-labelledby="works-dropdown-mobile">
-          <a id="webdesign-mobile" href="#webdesign" onclick="showSection('webdesign'); closeSidebar();">Web Design</a>
-          <a id="cyberprojects-mobile" href="#cyberprojects" onclick="showSection('cyberprojects'); closeSidebar();">Cybersecurity Projects</a>
-        </div>
-      
-        <button class="dropdown-btn" id="services-dropdown-mobile" aria-controls="services-container-mobile" aria-expanded="false">
-          <i class="fa-solid fa-screwdriver-wrench"></i> Services <span class="chevron" aria-hidden="true">▼</span>
-        </button>
-        <div class="dropdown-container" id="services-container-mobile" role="region" aria-labelledby="services-dropdown-mobile">
-          <a id="service1-mobile" href="#service1" onclick="showSection('service1'); closeSidebar();">UI/UX Design</a>
-          <a id="service2-mobile" href="#service2" onclick="showSection('service2'); closeSidebar();">Pentesting</a>
-        </div>
-      
-        <a id="contact-mobile" href="#contact" onclick="showSection('contact'); closeSidebar();"><i class="fa-solid fa-envelope"></i> Contact</a>
-      </nav>      
-
+    
+    <div class="footer-links">
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('about')">About</a>
+      <a onclick="showSection('hobbies')">Hobbies</a>
+      <a onclick="showSection('webdesign')">Web Design</a>
+      <a onclick="showSection('cyberprojects')">Cybersecurity</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </div>
+    
+    <div class="footer-social">
+      <a href="https://www.facebook.com/joeremychristie.ong"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/rrendzvou"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/ymereoj"><i class="fab fa-twitter"></i></a>
+      <a href="https://ph.linkedin.com/in/joeremyong2003"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    
     <div class="copyright">
-      &copy; <span id="current-year"></span> Rendezvous. Crafted with <i class="fa-solid fa-heart" style="color: var(--primary);" aria-label="love"></i> in CDO. </div>
+      &copy; 2025 Rendezvous. All Rights Reserved.
+    </div>
   </div>
 </footer>
 
